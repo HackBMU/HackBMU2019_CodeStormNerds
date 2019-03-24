@@ -44,11 +44,11 @@ cap=cv2.VideoCapture("http://192.168.43.1:8080/video")
 while True:
     ret,frame=cap.read()
     gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
-    results=detect(gray,frame)
+    canvas=detect(gray,frame)
     # show the output montage
-    #montage = build_montages(results, (128, 128), (4, 4))[0]
+    #montage = build_montages(results, (1024, 1024), (1, 1))[0]
     #cv2.imshow("Results", montage)
-    cv2.imshow("results",results)
+    cv2.imshow("results",canvas)
     if cv2.waitKey(1) & 0xFF==ord('q'):
         break
 
